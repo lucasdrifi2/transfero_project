@@ -1,13 +1,19 @@
 from django.shortcuts import render, redirect
 
 from usuarios.forms import UsuarioForm
-from sistema.models import Usuario
+
 # Create your views here.
 
 def login(request):
     return render(
         request,
-        '/usuarios/login.html'
+        'usuarios/login.html'
+    )
+
+def cadastrar(request):
+    return render(
+        request,
+        'usuarios/cadastrar.html'
     )
 
 def criarUsuario(request):
@@ -19,7 +25,7 @@ def criarUsuario(request):
         # files -> Contém os arquivos ou e/imagens. 
         if form.is_valid(): # Se os dados forem válidos, são salvos no BD.
             form.save()
-            return redirect('/usuario/login')
+            return redirect('usuario/login')
     
     else:
         # Se a requisição for GET, exibir o formulário de cadastro
@@ -29,19 +35,4 @@ def criarUsuario(request):
         request,
         'usuarios/cadastrar.html',
         {'form': form}
-    )
-
-
-
-def listarUsuarios(request):
-    usuarios = Usuario.objects.all() 
-
-    context = {
-        'usuarios': usuarios,
-    }
-
-    return render(
-        request,
-        'usuarios/listar.html',
-        context,
     )

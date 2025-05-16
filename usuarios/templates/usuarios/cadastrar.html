@@ -1,21 +1,89 @@
-
+{% load static %}
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
 </head>
+
+<style>
+    * {
+        font-family: sans-serif;
+    }
+    .imagem h1{
+        color: white;
+    }
+    .imagem p {
+        color: rgb(150, 150, 150);
+    }
+
+    .form {
+        border-radius: 60;
+        align-items: center;
+    }
+
+    .bloco {
+        display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1c1c1c;
+    position: sticky;
+    z-index: 10;
+    padding: 1rem 2rem; 
+    }
+    .imagem {
+        
+    }
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        color: white;
+        column-gap: 50px;
+ 
+    }
+    form p{
+        /* margin-bottom: 100px; */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 10px;
+    }
+    .forms h1{
+            color: white;
+        }
+    button {
+        color: white;
+        border-radius: 6px;
+        background-color: red;
+    }
+
+</style>
+
+
 <body>
-    <h1>Cadastro de Usuário</h1>
-
-    <form method="post" enctype="multipart/form-data">
-         {% csrf_token %} 
-
-         {{ form.as_p }}
-        <button type="submit">Cadastrar</button>
-    </form>
+    <div class="bloco">
 
 
+        <div class="imagem">
+            <h1>Welcome</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <img src="{% static '/global/assets/images/support-banner-image.jpg'%}" alt="">
+        </div>
+        <div class="forms">
+            <h1>Cadastro de Usuário</h1>
+
+            <form  method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+
+    </div>
 </body>
+
 </html>
