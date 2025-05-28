@@ -1,4 +1,9 @@
+![image](https://github.com/user-attachments/assets/0d73e32e-95fe-4de8-98a2-5f336268d23a)
+
+
+
 # 🎬 Transfero Project - Plataforma de Avaliação de Filmes
+
 
 Bem-vindo ao **Transfero Project**! 🌟 Esta plataforma permite que os usuários avaliem filmes, compartilhem opiniões e descubram novas recomendações baseadas nas avaliações da comunidade.
 
